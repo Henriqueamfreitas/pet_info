@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/styles/globalStyles.css">
+
+    <!-- JS -->
+    <script src="./src/scripts/index.js" defer type="module"></script>
+</head>
+<body>
+    <main>
+    <div class="leftSide">
+        <h1 class="leftSide__h1">Petinfo</h1>
+        <h2 class="leftSide__h2"><span class="blue">Amor</span> e <span class="blue">carinho</span> por meio do conhecimento</h2>
+        <p class="leftSide__p">Todas as informações para melhorar a vida do seu pet em um só lugar</p>
+        <div class="leftSide__images">
+            <div class="images__left">
+                <div class="imagesLeft__top">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+                <img class="imagesLeft__bottom" src="" alt="">
+            </div>
+                <img class="images__right" src="" alt="">
+        </div>
+    </div>
+
+    <form class="rightSide">
+        <h2 class="rightSide__h2">Login</h2>
+        <label for="email">Email</label>
+        <input class="rightSide__input" type="text" placeholder="Digite seu email aqui" id="email" name="email">
+        <label for="senha">Senha</label>
+        <input class="rightSide__input" type="text" placeholder="Digite sua senha aqui" id="senha" name="senha">
+        <button class="rightSide__loginButton">Acessar</button>
+        <h3 class="rightSide__h3">Ainda não possui conta?</h3>
+        <p class="rightSide__p">Clicando no botão abaixo, você pode se cadastrar rapidamente</p>
+        <button class="rightSide__registerButton">Cadastrar</button>
+    </form>
+    </main>
+    <div class="toast__container hidden">
+        <p class="toastContainer__p">Login realizado com sucesso</p>
+    </div>
+</body>
+</html>
