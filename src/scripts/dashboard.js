@@ -1,3 +1,6 @@
+import { deletePost, readAllPosts } from './requests.js' 
+import { render } from './render.js'
+
 function authentication(){
     const token = localStorage.getItem("@petInfo:token") //o token é uma string, ent n precisa do JSON.parse()
 
@@ -6,13 +9,12 @@ function authentication(){
     }
 }
 
+async function showDash(){
+    const allPosts = await readAllPosts()
 
+    render(allPosts)
+}
 
-const modalNewPost = document.querySelector('.modal__newPost')
-const openModalNewPost = document.querySelector('.headerRightSide__button')
-const closeModalNewPost = document.querySelector('.newPostTopPart__button') // mesma função do cancelModal
-const cancelModalNewPost = document.querySelector('.newPostBottomPart__cancelButton') // mesma função do closeModal
-const publishModalNewPost = document.querySelector('.newPostBottomPart__publishButton') 
 
 function handleNewPostModal(modal, openButton, closeButton, cancelButton){
     openButton.addEventListener('click', (event) => {
@@ -45,7 +47,7 @@ function showLogoutOption(){
     })
 
     button.addEventListener('click', ()=> {
-        localStorage.removeItem("@petInfo:token")
+        localStorage.clear()
         location.replace('../../index.html') 
     })
 
@@ -60,6 +62,13 @@ function closeLogoutOption(){
     })
 }
 
+const modalNewPost = document.querySelector('.modal__newPost')
+const openModalNewPost = document.querySelector('.headerRightSide__button')
+const closeModalNewPost = document.querySelector('.newPostTopPart__button') // mesma função do cancelModal
+const cancelModalNewPost = document.querySelector('.newPostBottomPart__cancelButton') // mesma função do closeModal
+const publishModalNewPost = document.querySelector('.newPostBottomPart__publishButton') 
+
 handleNewPostModal(modalNewPost, openModalNewPost, closeModalNewPost, cancelModalNewPost)
 authentication()
 showLogoutOption()
+showDash()

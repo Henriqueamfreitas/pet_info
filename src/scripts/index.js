@@ -13,6 +13,7 @@ function authentication(){
 // função loginRequest
 function handleLogin(){
     const inputs = document.querySelectorAll('.login__input')
+    const emailInput = document.querySelector('#email')
     const button = document.querySelector('.rightSide__loginButton')
     let loginBody = {}
     let count = 0
@@ -30,6 +31,7 @@ function handleLogin(){
             alert('Por favor, preencha os campos necessários')
         } else{
              const token = await loginRequest(loginBody)
+             localStorage.setItem("email", JSON.stringify(emailInput.value))
              return token
         }
     })
