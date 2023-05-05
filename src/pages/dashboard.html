@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard page</title>
+    <!-- JS -->
+    <script src="../scripts/dashboard.js" defer type="module"></script>
 </head>
 <body>
-    
+    <header class="header">
+        <h1 class="header__h1">Petinfo</h1>
+        <div class="header__rightSide">
+            <button class="headerRightSide__button">Criar Publicação</button>
+            <img class="headerRightSide__img" src="" alt="Imagem de Perfil">
+        </div>
+        <dialog class="modal__newPost">
+            <form>
+                <div class="newPost__TopPart">
+                    <h2 class="newPostTopPart__h2">Criando novo post</h2>
+                    <button class="newPostTopPart__button">X</button>
+                </div>
+                <label for="titulo">Título do post</label>
+                <input class="newPost__input" type="text" placeholder="Digite o título aqui..." id="titulo" name="titulo">
+                <label for="conteudo">Conteúdo do post</label>
+                <input class="newPost__input" type="text" placeholder="Desenvolva o conteúdo do post aqui..." id="conteudo" name="conteudo">  
+                <div class="newPost__bottomPart">
+                    <button class="newPostBottomPart__cancelButton">Cancelar</button>
+                    <button class="newPostBottomPart__publishButton">Publicar</button>
+                </div>                
+            </form>      
+        </dialog>
+        <dialog class="modal__logout">
+            <p class="logout__user">@user</p>
+            <button class="logout__button"> 
+                <img class = "logout__image" src="" alt="Sair">
+                Sair da conta
+            </button>
+        </dialog>
+    </header>
+    <main class="feed">
+        <div class="feed__line">
+            Feed
+        </div>
+        <div class="feed__posts">
+
+        </div>        
+    </main>
 </body>
 </html>

@@ -1,9 +1,16 @@
 import {loginRequest } from './requests.js'
-// loginRequest({
-//     "email": "kenzinho@mail.com",
-// 	"password": "123456"
-// })
 
+function authentication(){
+    const token = localStorage.getItem("@petInfo:token") //o token é uma string, ent n precisa do JSON.parse()
+
+    if(token){ //se não existir, token = null, e, no if(), o null é considerado false
+        location.replace('./src/pages/dashboard.html?titulo=&conteudo=')
+    }
+}
+
+
+// INDEX.HTML --> Estamos criando a função que pega os valores inseridos nos inputs de email e senha e colocando na 
+// função loginRequest
 function handleLogin(){
     const inputs = document.querySelectorAll('.login__input')
     const button = document.querySelector('.rightSide__loginButton')
@@ -27,5 +34,6 @@ function handleLogin(){
         }
     })
 }
-
 handleLogin()
+authentication()
+
