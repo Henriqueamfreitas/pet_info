@@ -1,4 +1,4 @@
-import { deletePost, readAllPosts } from './requests.js' 
+import { createPost, deletePost, readAllPosts } from './requests.js' 
 import { render } from './render.js'
 
 function authentication(){
@@ -15,20 +15,62 @@ async function showDash(){
     render(allPosts)
 }
 
+function handleNewPost(){
+    const buttonList = document.querySelectorAll('.newPostBottomPart__publishButton')
+    const button = buttonList[0]
+    const inputs = document.querySelectorAll('.newPost__input')
+    const modalController = document.querySelector('.modal__newPost')
+    const newPost = {}
+    let count = 0
+    
+    button.addEventListener('click', async(event) => {
+        event.preventDefault()
+        inputs.forEach(({ name, value }) => {
+            if(value.trim() === ''){
+                count+=1
+            }
+            newPost[name] = value
+        })
+        
+        if(count !== 0){
+            count = 0
+            alert('Por favor, preencha os campos necessários.')
+            // toast(red, 'Por favor, preencha os campos necessários.')
+        } else{
+            // await createPost(newPost)
+            // modalController.close()
 
-function handleNewPostModal(modal, openButton, closeButton, cancelButton){
-    openButton.addEventListener('click', (event) => {
-        modal.showModal()
+            // showDash()
 
-        closeModal(closeButton, modal)
-
-        if(cancelButton != undefined){
-            closeModal(cancelButton, modal)
+            // inputs.forEach((input) => {
+            //     input.value = ''
+            // })
         }
+    
     })
 }
-const modal = document.querySelector('.modal__deletePost')
 
+
+function handleNewPostModal(){
+    const modalNewPost = document.querySelector('.modal__newPost')
+    const openModalNewPost = document.querySelector('.headerRightSide__button')
+    const closeModalNewPost = document.querySelector('.newPostTopPart__button') // mesma função do cancelModal
+    const cancelModalNewPost = document.querySelector('.newPostBottomPart__cancelButton') // mesma função do closeModal
+
+    openModalNewPost.addEventListener('click', (event) => {
+        modalNewPost.showModal()
+
+        closeModal(closeModalNewPost, modalNewPost)
+
+        if(cancelModalNewPost != undefined){
+            closeModal(cancelModalNewPost, modalNewPost)
+        }
+
+        
+    })
+}
+
+const modal = document.querySelector('.modal__deletePost')
 export function handleDeletePostModal(){
     
     const openModalDeletePost = document.querySelectorAll('.right__excludeButton')
@@ -92,13 +134,14 @@ function closeLogoutOption(){
     })
 }
 
-const modalNewPost = document.querySelector('.modal__newPost')
-const openModalNewPost = document.querySelector('.headerRightSide__button')
-const closeModalNewPost = document.querySelector('.newPostTopPart__button') // mesma função do cancelModal
-const cancelModalNewPost = document.querySelector('.newPostBottomPart__cancelButton') // mesma função do closeModal
-const publishModalNewPost = document.querySelector('.newPostBottomPart__publishButton') 
 
-handleNewPostModal(modalNewPost, openModalNewPost, closeModalNewPost, cancelModalNewPost)
+handleNewPostModal()
 authentication()
 showLogoutOption()
 showDash()
+handleNewPost()
+// createPost({
+//     "title": "44444444444",
+//     "content": "23j2p3iie2p2222"
+//   }
+//   )

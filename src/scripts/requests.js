@@ -2,7 +2,7 @@ const baseUrl = "http://localhost:3333"
 
 const token = JSON.parse(localStorage.getItem("@petInfo:token")) || '' //Se n vier token, vem string vazia
 const requestHeaders = { // header que passamos em requisições POST, PATCH e PUT
-    'Content-Type': 'application/json', //Colocamos o content type entre aspas pq não conseguimos 
+    'Content-Type': 'application/json', // Colocamos o content type entre aspas pq não conseguimos 
     // declarar nome de chave com hifen.
     Authorization: `Bearer ${token}`,                                  
 } 
@@ -37,13 +37,14 @@ export async function loginRequest(loginBody){
 
 
 // AS CINCO FUNÇÕES ABAIXO CONSISTEM NO CRUD!!!!
-export async function createPost(postBody, ){
+export async function createPost(postBody){
     const newPost = await fetch(`${baseUrl}/posts/create`, {
-        method: 'POST', // Vamos enviar uma informação
+        method: "POST", // Vamos enviar uma informação
         headers: requestHeaders,
         body: JSON.stringify(postBody)
     })
     .then(async (res) => {
+        console.log(res)
         if(res.ok){
             // toast(green, 'Post criado com sucesso')
             return res.json
