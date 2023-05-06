@@ -1,4 +1,4 @@
-// import { handleDeletePost } from './dashboard.js'
+import { handleDeletePost, handleDeletePostModal } from './dashboard.js'
 
 const feedPosts = document.querySelector('.feed__posts')
 // export async function handleDeletePost()
@@ -61,11 +61,6 @@ function createCard(object){
     return post
 }
 
-async function handleDeletePost(){
-    const deleteButtons = document.querySelector('.right__excludeButton')
-    
-}
-// handleDeletePost()
 
 
 export async function render(array = []){
@@ -80,5 +75,6 @@ export async function render(array = []){
         feedPosts.append(card)
     })
 
+    handleDeletePostModal()
     handleDeletePost()
 }

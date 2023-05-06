@@ -27,6 +27,36 @@ function handleNewPostModal(modal, openButton, closeButton, cancelButton){
         }
     })
 }
+const modal = document.querySelector('.modal__deletePost')
+
+export function handleDeletePostModal(){
+    
+    const openModalDeletePost = document.querySelectorAll('.right__excludeButton')
+    const closeButton = document.querySelector('.deleteTopPart__button')
+    const cancelButton = document.querySelector('.deleteButtons__cancel')
+    openModalDeletePost.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            modal.showModal()
+            localStorage.setItem("id", event.target.dataset.postId)
+            closeModal(closeButton, modal)
+            closeModal(cancelButton, modal)
+        })
+    })
+}
+
+export async function handleDeletePost(){
+    const confirmDeleteButtons = document.querySelectorAll('.deleteButtons__exclude')
+    confirmDeleteButtons.forEach((button) => {
+        button.addEventListener('click', async (event) => {
+            const id = localStorage.getItem("id")            
+            await deletePost(id)
+            const posts = await readAllPosts()
+            render(posts)
+        })
+    })
+
+}
+
 
 function closeModal(button, modal){
     button.addEventListener('click', (event) => {
