@@ -1,5 +1,5 @@
 import { handleDeletePost, handleDeletePostModal, handleUpdateModal, handlePublicationModal } from './dashboard.js'
-
+import{ readUser } from './requests.js'
 const feedPosts = document.querySelector('.feed__posts')
 // export async function handleDeletePost()
 
@@ -18,10 +18,8 @@ function createCard(object){
     const post__p = document.createElement('p')
     const post__button = document.createElement('button')
     
-    const logoutUser = document.querySelector('.logout__user')
-    const userImg = document.querySelector('.headerRightSide__img')
-    
-    // Assigning values to the elements
+    // logoutUser
+    // // Assigning values to the elements
     const user = object.user
     left__img.src = user.avatar
     left__name.innerHTML = user.username
@@ -57,8 +55,8 @@ function createCard(object){
     topPart__left.append(left__img, left__name, left__data)
     if(user.email === JSON.parse(localStorage.getItem("email"))){
         topPart__right.append(right__editButton, right__excludeButton)
-        logoutUser.innerHTML = user.username
-        userImg.src = user.avatar
+        // logoutUser.innerHTML = user.username
+        // userImg.src = user.avatar
     }
 
     return post
@@ -73,6 +71,15 @@ export async function render(array = []){
     
     feedPosts.innerHTML = ''
     
+    const user = await readUser()
+
+    const logoutUser = document.querySelector('.logout__user')
+    const userImg = document.querySelector('.headerRightSide__img')
+
+    logoutUser.innerHTML = user.username
+    userImg.src = user.avatar
+
+
     array.forEach((post) => {
         const card = createCard(post)
         feedPosts.append(card)

@@ -139,6 +139,22 @@ export async function deletePost(postId){
     return post
 }
 
+export async function readUser(){
+    const user = await fetch(`${baseUrl}/users/profile`, {
+        method: 'GET',
+        headers: requestHeaders,
+    })
+    .then((res) => {
+        if(res.ok){
+            return res.json()
+        } else{
+            const response = res.json()
+            alert(response.message)
+        }
+    })
+
+    return user
+}
 
 // Criando novo usuário
 // export async function createUser(userBody){

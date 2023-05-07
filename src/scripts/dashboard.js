@@ -1,4 +1,4 @@
-import { createPost, deletePost, readAllPosts, readById, updatePost } from './requests.js' 
+import { createPost, deletePost, readAllPosts, readById, updatePost, readUser } from './requests.js' 
 import { render } from './render.js'
 
 function authentication(){
