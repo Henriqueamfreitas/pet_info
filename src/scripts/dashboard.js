@@ -1,4 +1,4 @@
-import { createPost, deletePost, readAllPosts } from './requests.js' 
+import { createPost, deletePost, readAllPosts, updatePost } from './requests.js' 
 import { render } from './render.js'
 
 function authentication(){
@@ -134,22 +134,55 @@ function closeLogoutOption(){
         logoutOption.close()
     })
 }
-// ffgiddd
 
 export function handleUpdateModal(){
     const openButtons = document.querySelectorAll('.right__editButton')
-    console.log(openButtons)
     const modalController = document.querySelector('.modal__controler--update')
     const closeButton = document.querySelector('.updateTopPart__button')
-    const inputs = document.querySelector('.update__input')
+    const inputs = document.querySelectorAll('.update__input')
     const cancelButton = document.querySelector('.update__cancelButton')
     const saveButton = document.querySelector('.update__saveButton')
+    const titulo = document.querySelector('.post__h1')
+    const descricao = document.querySelector('.post__p')
+    
     const updateBody = {}
     let count = 0
-
+    
     openButtons.forEach((button) => {
         button.addEventListener('click', (event) => {
             modalController.showModal()
+
+            inputs[0].value = titulo.innerHTML
+            inputs[1].value = descricao.innerHTML
+        
+            saveButton.addEventListener('click', async(e) => {
+                e.preventDefault()
+                inputs.forEach(({ name, value }) => {
+                    if(value.trim() === ''){
+                        count+=1
+                    }
+                    
+                    updateBody[name] = value
+                })
+                // console.log(updateBody)
+                if(count !== 0){
+                    count = 0
+                    alert('Por favor preencha os campos necessários')
+                    // toast(red, 'Por favor preencha os campos necessários')
+                } else{
+                    await updatePost(event.target.dataset.postId, updateBody)
+                    alert('Tarefa atualizada com sucesso')
+                    // toast(green, "Tarefa atualizada com sucesso");
+
+                    modalController.close()
+                    
+                    inputs.forEach((input) => {
+                        input.value = "";
+                      });
+            
+                    showDash();
+                }
+            })
         })
     })
 }

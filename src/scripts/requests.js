@@ -111,6 +111,7 @@ export async function updatePost(postId, postBody){
         else{
             const response = await res.json()
             alert(response.message)
+            console.log(response.message)
             // toast(red, response.message)
         }
 
