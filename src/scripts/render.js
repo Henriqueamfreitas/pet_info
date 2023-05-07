@@ -3,6 +3,14 @@ import{ readUser } from './requests.js'
 const feedPosts = document.querySelector('.feed__posts')
 // export async function handleDeletePost()
 
+
+const monthArray = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
+                    'Outubro', 'Novembro', 'Dezembro']
+function adjustDate(parameter){
+    const monthName = monthArray[parameter-1]
+    return monthName
+}
+
 function createCard(object){
     // Creating HTML elements
     const post = document.createElement('div')
@@ -18,12 +26,16 @@ function createCard(object){
     const post__p = document.createElement('p')
     const post__button = document.createElement('button')
     
-    // logoutUser
-    // // Assigning values to the elements
+    // Assigning values to the elements
     const user = object.user
     left__img.src = user.avatar
     left__name.innerHTML = user.username
-    left__data.innerHTML = object.createdAt
+    const date = object.createdAt.substr(0,7)
+    const year = date.substr(0,4)
+    const monthNumber = parseInt(date.substr(5,6))
+    const monthName = adjustDate(monthNumber)
+    // console.log(monthName)
+    left__data.innerHTML = `${monthName} de ${year}`
     right__editButton.innerHTML = 'Editar'
     right__excludeButton.innerHTML = 'Excluir'
     post__h1.innerHTML = object.title
@@ -55,8 +67,6 @@ function createCard(object){
     topPart__left.append(left__img, left__name, left__data)
     if(user.email === JSON.parse(localStorage.getItem("email"))){
         topPart__right.append(right__editButton, right__excludeButton)
-        // logoutUser.innerHTML = user.username
-        // userImg.src = user.avatar
     }
 
     return post
