@@ -1,4 +1,4 @@
-import { createPost, deletePost, readAllPosts, updatePost } from './requests.js' 
+import { createPost, deletePost, readAllPosts, readById, updatePost } from './requests.js' 
 import { render } from './render.js'
 
 function authentication(){
@@ -155,6 +155,9 @@ export function handleUpdateModal(){
             inputs[0].value = titulo.innerHTML
             inputs[1].value = descricao.innerHTML
         
+            closeModal(closeButton, modalController)
+            closeModal(cancelButton, modalController)
+
             saveButton.addEventListener('click', async(e) => {
                 e.preventDefault()
                 inputs.forEach(({ name, value }) => {
@@ -164,7 +167,6 @@ export function handleUpdateModal(){
                     
                     updateBody[name] = value
                 })
-                // console.log(updateBody)
                 if(count !== 0){
                     count = 0
                     alert('Por favor preencha os campos necessários')
@@ -187,10 +189,30 @@ export function handleUpdateModal(){
     })
 }
 
+export function handlePublicationModal(){
+    const modalControler = document.querySelector('.modal__controler--openPublication')
+    const openButtons = document.querySelectorAll('.post__button')
+    const closeButton = document.querySelector('.openPublicationTopPart__button')
+    const modalH1 = document.querySelector('.openPublication__h1')
+    const originalH1 = document.querySelector('.post__h1')
+    const modalP = document.querySelector('.openPublication__p')
+    const originalP = document.querySelector('.post__p')
+
+    openButtons.forEach((button) => {
+        button.addEventListener('click', async(event) => {
+            modalControler.showModal()
+            const posts = await readAllPosts()
+            const filteredPost = posts.filter(post => post.id === event.target.dataset.postId)
+            modalH1.innerHTML = filteredPost[0].title 
+            modalP.innerHTML = filteredPost[0].content 
+            closeModal(closeButton, modalControler)
+        })
+    })
+}
+
 
 handleNewPostModal()
 authentication()
 showLogoutOption()
 showDash()
 handleNewPost()
-// handleUpdateModal()

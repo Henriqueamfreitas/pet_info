@@ -1,4 +1,4 @@
-import { handleDeletePost, handleDeletePostModal, handleUpdateModal } from './dashboard.js'
+import { handleDeletePost, handleDeletePostModal, handleUpdateModal, handlePublicationModal } from './dashboard.js'
 
 const feedPosts = document.querySelector('.feed__posts')
 // export async function handleDeletePost()
@@ -29,7 +29,7 @@ function createCard(object){
     right__editButton.innerHTML = 'Editar'
     right__excludeButton.innerHTML = 'Excluir'
     post__h1.innerHTML = object.title
-    post__p.innerHTML = object.content
+    post__p.innerHTML = `${object.content.substr(0, 150)}...`
     post__button.innerHTML = 'Acessar publicação'
     
     
@@ -48,6 +48,8 @@ function createCard(object){
     post__h1.classList = 'post__h1'
     post__p.classList = 'post__p'
     post__button.classList = 'post__button'
+    post__button.dataset.postId = object.id
+
     
     // Establishing the hierarchy
     post.append(post__topPart, post__h1, post__p, post__button)
@@ -77,6 +79,7 @@ export async function render(array = []){
     })
 
     handleUpdateModal()
+    handlePublicationModal()
     handleDeletePostModal()
     handleDeletePost()
 }
