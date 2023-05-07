@@ -138,3 +138,25 @@ export async function deletePost(postId){
 
     return post
 }
+
+
+// Criando novo usuário
+// export async function createUser(userBody){
+//     const user = await fetch(`${baseUrl}/users/create`, {
+//         method: "POST",
+//         headers: requestHeaders,
+//         body: JSON.stringify(userBody)
+//     })
+//     .then( async (res) => {
+//         if(res.ok){
+//             alert('Usuário cadastrado com sucesso')
+//             return res.json()
+//         } else{
+//             const response = await res.json()
+//             alert(response.message)
+//         }
+
+//         return user
+//     })
+// }
+
