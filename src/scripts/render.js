@@ -1,4 +1,4 @@
-import { handleDeletePost, handleDeletePostModal } from './dashboard.js'
+import { handleDeletePost, handleDeletePostModal, handleUpdateModal } from './dashboard.js'
 
 const feedPosts = document.querySelector('.feed__posts')
 // export async function handleDeletePost()
@@ -76,6 +76,8 @@ export async function render(array = []){
         feedPosts.append(card)
     })
 
+    handleUpdateModal()
     handleDeletePostModal()
     handleDeletePost()
 }
+

@@ -74,6 +74,7 @@ const modal = document.querySelector('.modal__deletePost')
 export function handleDeletePostModal(){
     
     const openModalDeletePost = document.querySelectorAll('.right__excludeButton')
+    // console.log(openModalDeletePost)
     const closeButton = document.querySelector('.deleteTopPart__button')
     const cancelButton = document.querySelector('.deleteButtons__cancel')
     openModalDeletePost.forEach((button) => {
@@ -135,9 +136,9 @@ function closeLogoutOption(){
 }
 
 
-const openButtons = document.querySelectorAll('.right__editButton')
-console.log(openButtons)
-function handleUpdateModal(){
+export function handleUpdateModal(){
+    const openButtons = document.querySelectorAll('.right__editButton')
+    console.log(openButtons)
     const modalController = document.querySelector('.modal__controler--update')
     const closeButton = document.querySelector('.updateTopPart__button')
     const inputs = document.querySelector('.update__input')
@@ -146,16 +147,17 @@ function handleUpdateModal(){
     const updateBody = {}
     let count = 0
 
-    // openButtons.forEach((button) => {
-    //     button.addEventListener('click', (event) => {
-    //         modalController.showModal()
-    //     })
-    // })
+    openButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            modalController.showModal()
+        })
+    })
 }
+
 
 handleNewPostModal()
 authentication()
 showLogoutOption()
 showDash()
 handleNewPost()
-handleUpdateModal()
+// handleUpdateModal()
