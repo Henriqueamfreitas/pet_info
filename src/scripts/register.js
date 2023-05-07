@@ -41,14 +41,72 @@ async function handleCreateUser(){
     const inputs = document.querySelectorAll('.leftSide__input')
     let user = {}
     registerButton.addEventListener('click', async(event) => {
-        // event.preventDefault()
+        event.preventDefault()
         inputs.forEach(( {name, value} ) => {
             user[name] = value
         })
 
-        await createUser(user)
+        // await createUser(user)
+        location.replace('../../index.html')
     })
 } 
+
+
+const goBackButton = document.querySelector('.leftSideTop__button')
+goBackButton.addEventListener('click', (event) => {
+    event.preventDefault()
+    location.replace('../../index.html')
+    
+})
+
+const backButton = document.querySelector('.leftSide__registerButton')
+backButton.addEventListener('click', (event) => {
+    event.preventDefault()
+    location.replace('../../index.html')
+    
+})
+
+const button = document.querySelector('.leftSide__loginButton')
+const user = document.querySelector('#user')
+const email = document.querySelector('#email')
+const avatar = document.querySelector('#avatar')
+const password = document.querySelector('#password')
+user.addEventListener('keyup', (event) => {
+    if((user.value !== null) && (user.value !== '') && (email.value !== null) && (email.value !== '') &&
+       (avatar.value !== null) && (avatar.value !== '') && (password.value !== null) && (password.value !== '')){
+        button.disabled = false
+    } else{
+        button.disabled = true
+    }
+})
+
+email.addEventListener('keyup', (event) => {
+    if((user.value !== null) && (user.value !== '') && (email.value !== null) && (email.value !== '') &&
+       (avatar.value !== null) && (avatar.value !== '') && (password.value !== null) && (password.value !== '')){
+        button.disabled = false
+    } else{
+        button.disabled = true
+    }
+})
+
+avatar.addEventListener('keyup', (event) => {
+    if((user.value !== null) && (user.value !== '') && (email.value !== null) && (email.value !== '') &&
+       (avatar.value !== null) && (avatar.value !== '') && (password.value !== null) && (password.value !== '')){
+        button.disabled = false
+    } else{
+        button.disabled = true
+    }
+})
+
+password.addEventListener('keyup', (event) => {
+    if((user.value !== null) && (user.value !== '') && (email.value !== null) && (email.value !== '') &&
+       (avatar.value !== null) && (avatar.value !== '') && (password.value !== null) && (password.value !== '')){
+        button.disabled = false
+    } else{
+        button.disabled = true
+    }
+})
+
 
 
 authentication()

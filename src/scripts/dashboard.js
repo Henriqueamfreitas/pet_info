@@ -38,13 +38,13 @@ function handleNewPost(){
             // toast(red, 'Por favor, preencha os campos necessários.')
         } else{
             // await createPost(newPost) createPost ta dando error 500
-            // modalController.close()
+            modalController.close()
 
-            // showDash()
+            showDash()
 
-            // inputs.forEach((input) => {
-            //     input.value = ''
-            // })
+            inputs.forEach((input) => {
+                input.value = ''
+            })   
         }
     
     })
