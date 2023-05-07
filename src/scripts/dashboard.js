@@ -37,7 +37,7 @@ function handleNewPost(){
             alert('Por favor, preencha os campos necessários.')
             // toast(red, 'Por favor, preencha os campos necessários.')
         } else{
-            // await createPost(newPost)
+            // await createPost(newPost) createPost ta dando error 500
             // modalController.close()
 
             // showDash()
@@ -135,13 +135,27 @@ function closeLogoutOption(){
 }
 
 
+const openButtons = document.querySelectorAll('.right__editButton')
+console.log(openButtons)
+function handleUpdateModal(){
+    const modalController = document.querySelector('.modal__controler--update')
+    const closeButton = document.querySelector('.updateTopPart__button')
+    const inputs = document.querySelector('.update__input')
+    const cancelButton = document.querySelector('.update__cancelButton')
+    const saveButton = document.querySelector('.update__saveButton')
+    const updateBody = {}
+    let count = 0
+
+    // openButtons.forEach((button) => {
+    //     button.addEventListener('click', (event) => {
+    //         modalController.showModal()
+    //     })
+    // })
+}
+
 handleNewPostModal()
 authentication()
 showLogoutOption()
 showDash()
 handleNewPost()
-// createPost({
-//     "title": "44444444444",
-//     "content": "23j2p3iie2p2222"
-//   }
-//   )
+handleUpdateModal()

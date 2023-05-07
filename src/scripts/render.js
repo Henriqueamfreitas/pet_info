@@ -42,6 +42,7 @@ function createCard(object){
     left__data.classList = 'left__data'
     topPart__right.classList = 'topPart__right'
     right__editButton.classList = 'right__editButton'
+    right__editButton.dataset.postId = object.id
     right__excludeButton.classList = 'right__excludeButton'
     right__excludeButton.dataset.postId = object.id
     post__h1.classList = 'post__h1'
