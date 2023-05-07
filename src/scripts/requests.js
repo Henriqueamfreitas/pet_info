@@ -10,6 +10,7 @@ const requestHeaders = { // header que passamos em requisições POST, PATCH e P
 const red = '#df1545'
 const green = '#1668821'
 
+
 // loginBody é o usuário e a senha
 // INDEX.HTML --> Função que verifica se os valores de email e senha são válidos (cadastrados)
 export async function loginRequest(loginBody){

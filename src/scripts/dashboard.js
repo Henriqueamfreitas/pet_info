@@ -1,5 +1,6 @@
 import { createPost, deletePost, readAllPosts, readById, updatePost, readUser } from './requests.js' 
-import { render } from './render.js'
+import { render, monthArray, adjustDate } from './render.js'
+
 
 function authentication(){
     const token = localStorage.getItem("@petInfo:token") //o token é uma string, ent n precisa do JSON.parse()
@@ -189,7 +190,7 @@ export function handleUpdateModal(){
     })
 }
 
-export function handlePublicationModal(){
+export async function handlePublicationModal(){
     const modalControler = document.querySelector('.modal__controler--openPublication')
     const openButtons = document.querySelectorAll('.post__button')
     const closeButton = document.querySelector('.openPublicationTopPart__button')
@@ -198,6 +199,18 @@ export function handlePublicationModal(){
     const modalP = document.querySelector('.openPublication__p')
     const originalP = document.querySelector('.post__p')
 
+    modalH1.classList.add('text-3')
+    modalP.classList.add('text-7')
+
+    const img = document.querySelector('.openPublicationTopLeft__img')
+    const name = document.querySelector('.openPublicationTopLeft__name')
+    const date = document.querySelector('.openPublicationTopLeft__date')
+
+    const user = await readUser()
+    console.log(user)
+    img.src = user.avatar
+    name.innerHTML = user.username 
+
     openButtons.forEach((button) => {
         button.addEventListener('click', async(event) => {
             modalControler.showModal()
@@ -205,6 +218,12 @@ export function handlePublicationModal(){
             const filteredPost = posts.filter(post => post.id === event.target.dataset.postId)
             modalH1.innerHTML = filteredPost[0].title 
             modalP.innerHTML = filteredPost[0].content 
+            const dateUnadjusted = filteredPost[0].createdAt.substr(0,7)
+            const year = dateUnadjusted.substr(0,4)
+            const monthNumber = parseInt(dateUnadjusted.substr(5,6))
+            const monthName = adjustDate(monthNumber)
+            date.innerHTML = `${monthName} de ${year}`
+        
             closeModal(closeButton, modalControler)
         })
     })

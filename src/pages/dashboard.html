@@ -5,42 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+
+
     <!-- JS -->
     <script src="../scripts/dashboard.js" defer type="module"></script>
 </head>
 <body>
     <header class="header">
-        <h1 class="header__h1">Petinfo</h1>
+        <h1 class="header__h1 text-4">Petinfo</h1>
         <div class="header__rightSide">
-            <button class="headerRightSide__button">Criar Publicação</button>
+            <button class="headerRightSide__button text-6">Criar Publicação</button>
             <img class="headerRightSide__img" src="" alt="Imagem de Perfil">
         </div>
         <dialog class="modal__newPost">
             <form>
                 <div class="newPost__TopPart">
-                    <h2 class="newPostTopPart__h2">Criando novo post</h2>
-                    <button class="newPostTopPart__button">X</button>
+                    <h2 class="newPostTopPart__h2 text-5">Criando novo post</h2>
+                    <button class="newPostTopPart__button text-8">X</button>
                 </div>
-                <label for="titulo">Título do post</label>
-                <input class="newPost__input" type="text" placeholder="Digite o título aqui..." id="titulo" name="titulo">
-                <label for="conteudo">Conteúdo do post</label>
-                <input class="newPost__input" type="text" placeholder="Desenvolva o conteúdo do post aqui..." id="conteudo" name="conteudo">  
+                <label class="text-6" for="titulo">Título do post</label>
+                <input class="newPost__input text-7" type="text" placeholder="Digite o título aqui..." id="titulo" name="titulo">
+                <label class="text-6" for="conteudo">Conteúdo do post</label>
+                <input class="newPost__input text-7" type="text" placeholder="Desenvolva o conteúdo do post aqui..." id="conteudo" name="conteudo">  
                 <div class="newPost__bottomPart">
-                    <button class="newPostBottomPart__cancelButton">Cancelar</button>
-                    <button class="newPostBottomPart__publishButton">Publicar</button>
+                    <button class="newPostBottomPart__cancelButton text-6">Cancelar</button>
+                    <button class="newPostBottomPart__publishButton text-6">Publicar</button>
                 </div>                
             </form>      
         </dialog>
         <dialog class="modal__logout">
             <p class="logout__user"></p>
-            <button class="logout__button"> 
+            <button class="logout__button text-6"> 
                 <img class = "logout__image" src="" alt="Sair">
                 Sair da conta
             </button>
         </dialog>
     </header>
     <main class="feed">
-        <div class="feed__line">
+        <div class="feed__line text-5">
             Feed
         </div>
         <div class="feed__posts">
@@ -48,15 +53,15 @@
         
         <dialog class="modal__controler--update">
             <div class="update__topPart">
-                <h1 class="updateTopPart__h1"></h1>
-                <button class="updateTopPart__button">X</button>
+                <h1 class="updateTopPart__h1">Edição</h1>
+                <button class="updateTopPart__button text-8">X</button>
             </div>
-            <label for="title">Título do post</label>
-            <input class="update__input" type="text" name="title" id="title">
-            <label for="content">Conteúdo do post</label>
-            <input class="update__input" type="text" name="content" id="content">
-            <button class="update__cancelButton">Cancelar</button>
-            <button class="update__saveButton">Salvar Alterações</button>
+            <label class="text-6" for="title">Título do post</label>
+            <input class="update__input text-7" type="text" name="title" id="title">
+            <label class="text-6" for="content">Conteúdo do post</label>
+            <input class="update__input text-7" type="text" name="content" id="content">
+            <button class="update__cancelButton text-6">Cancelar</button>
+            <button class="update__saveButton text-6">Salvar Alterações</button>
         </dialog>
 
         <dialog class="modal__controler--openPublication">
@@ -66,7 +71,7 @@
                     <p class="openPublicationTopLeft__name"></p>
                     <p class="openPublicationTopLeft__date"></p>
                 </div>
-                <button class="openPublicationTopPart__button">x</button> 
+                <button class="openPublicationTopPart__button text-6">x</button> 
             </div>
             <h1 class="openPublication__h1"></h1>
             <p class="openPublication__p"></p>
@@ -74,14 +79,14 @@
         
         <dialog class="modal__deletePost">
             <div class="deletePost__topPart">
-                <h1 class="deleteTopPart__h1"></h1>
-                <button class="deleteTopPart__button">X</button>
+                <h1 class="deleteTopPart__h1 text-5">Confirmação de exclusão</h1>
+                <button class="deleteTopPart__button text-8">X</button>
             </div>
-            <h2 class="deletePost__h2">Tem certeza que deseja excluir este post?</h2>
-            <p class="deletePost__p">Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
+            <h2 class="deletePost__h2 text-4">Tem certeza que deseja excluir este post?</h2>
+            <p class="deletePost__p text-7">Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
             <div class="deletePost__buttons">
-                <button class="deleteButtons__cancel">Cancelar</button>
-                <button class="deleteButtons__exclude">Sim, excluir este post</button>
+                <button class="deleteButtons__cancel text-6">Cancelar</button>
+                <button class="deleteButtons__exclude text-6">Sim, excluir este post</button>
             </div>
         </dialog>
     </main>

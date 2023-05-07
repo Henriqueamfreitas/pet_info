@@ -4,9 +4,9 @@ const feedPosts = document.querySelector('.feed__posts')
 // export async function handleDeletePost()
 
 
-const monthArray = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
+export const monthArray = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
                     'Outubro', 'Novembro', 'Dezembro']
-function adjustDate(parameter){
+export function adjustDate(parameter){
     const monthName = monthArray[parameter-1]
     return monthName
 }
@@ -34,7 +34,6 @@ function createCard(object){
     const year = date.substr(0,4)
     const monthNumber = parseInt(date.substr(5,6))
     const monthName = adjustDate(monthNumber)
-    // console.log(monthName)
     left__data.innerHTML = `${monthName} de ${year}`
     right__editButton.innerHTML = 'Editar'
     right__excludeButton.innerHTML = 'Excluir'
@@ -48,16 +47,16 @@ function createCard(object){
     post__topPart.classList = 'post__topPart'
     topPart__left.classList = 'topPart__left'
     left__img.classList = 'left__img'
-    left__name.classList = 'left__name'
-    left__data.classList = 'left__data'
+    left__name.classList = 'left__name text-9'
+    left__data.classList = 'left__data text-9'
     topPart__right.classList = 'topPart__right'
-    right__editButton.classList = 'right__editButton'
+    right__editButton.classList = 'right__editButton text-9'
     right__editButton.dataset.postId = object.id
-    right__excludeButton.classList = 'right__excludeButton'
+    right__excludeButton.classList = 'right__excludeButton text-9'
     right__excludeButton.dataset.postId = object.id
-    post__h1.classList = 'post__h1'
-    post__p.classList = 'post__p'
-    post__button.classList = 'post__button'
+    post__h1.classList = 'post__h1 text-3'
+    post__p.classList = 'post__p text-7'
+    post__button.classList = 'post__button text-6'
     post__button.dataset.postId = object.id
 
     
@@ -86,7 +85,7 @@ export async function render(array = []){
     const logoutUser = document.querySelector('.logout__user')
     const userImg = document.querySelector('.headerRightSide__img')
 
-    logoutUser.innerHTML = user.username
+    logoutUser.innerHTML = `@${user.username}`
     userImg.src = user.avatar
 
 

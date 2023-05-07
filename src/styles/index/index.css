@@ -1,0 +1,104 @@
+/* MAIN */
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+/* LEFT SIDE */
+.leftSide{}
+
+.leftSide__h1{}
+
+.leftSide__h2{}
+
+.leftSide__p{}
+
+.leftSide__images{}
+
+.images__left{}
+
+.imagesLeft__top{}
+
+.imagesLeftTop__first{}
+
+.imagesLeftTop__second{}
+
+.imagesLeft__bottom{}
+
+.images__right{}
+
+
+/* RIGHT SIDE */
+.rightSide{}
+
+.rightSide__h2{}
+
+.loginInput{}
+
+.rightSide__loginButton{}
+
+.rightSide__h3{}
+
+.rightSide__p{}
+
+.rightSide__registerButton{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Register, INDEX, dashboard */
+/* Ooooba PETINFO, TEXTO EMBAIXO DO PETINFO, */
+font-weight: 600px
+font-size: 2rem /* 32px */
+
+/* PetInfo(register) */
+font-weight: 500px
+font-size: 2rem /* 32px */
+
+/* Título post (dashboard normal e modal) */
+font-weight: 600px
+font-size: 1.5rem /* 24px */
+
+/* PetInfo(dashboard) */
+font-weight: 500px
+font-size: 1.5rem /* 24px */
+
+/* Cadastro, LOGIN, feed, título modal */
+font-weight: 500px
+font-size: 1.25rem /* 20px */
+
+/* Label dos inputs, botão cadastrar, botão voltar para o login, LABEL, BOTÃO ACESSAR, BOTÃO CADASTRAR, botão criar publicação, botão acessar publicação, label dos modais, botões dos modais */
+font-weight: 500px
+font-size: 1rem /* 16px */
+
+/* inputs, texto embaixo das imagens, TEXTO PEQUENO DO LADO ESQUERDO, INPUTS, texto post (normal e modal), texto do input dos modais  */
+font-weight: 400px
+font-size: 1rem /* 16px */
+
+/* x do botão (todos os modais dashboard)  */
+font-weight: 700px
+font-size: .875rem /* 14px */
+
+/* Voltar para home, AINDA N POSSUI CONTA, nome do usuário no post (normal e modal), data (normal e modal), botão editar, botão excluir */
+font-weight: 500px
+font-size: .875rem /* 14px */
+
+/* TEXTO CINZA DO LADO DIREITO,  */
+font-weight: 400px
+font-size: .875rem /* 14px */
+

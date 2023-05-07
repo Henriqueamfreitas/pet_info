@@ -1,0 +1,59 @@
+/* BODY */
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 11.6875rem;
+    margin-bottom: 11.6875rem;
+}
+
+/* LEFT SIDE */
+.leftSide{
+    display: flex;
+    flex-direction: column;
+    margin-right: 6.9375rem;
+    width: 23.0625rem;
+}
+
+.leftSide__top{
+    display: flex;
+}
+
+.leftSideTop__h2{}
+
+.leftSideTop__button{}
+
+.leftSide__input{}
+
+.leftSide__loginButton{}
+
+.leftSide__registerButton{}
+
+/* RIGHT SIDE */
+.rightSide{
+    display: flex;
+    flex-direction: column;
+    width: 23.0625rem;
+}
+
+.rightSide__h1{}
+
+.rightSide__h2{}
+
+.rightSide__p{}
+
+.rightSide__images{
+    display: flex;
+}
+
+.images__left{}
+
+.imagesLeft__top{}
+
+.imagesLeftTop__first{}
+
+.imagesLeftTop__second{}
+
+.imagesLeft__bottom{}
+
+.images__right{}
+
