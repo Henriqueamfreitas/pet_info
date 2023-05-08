@@ -49,7 +49,7 @@ function handleLogin(){
 
         if(count === 0){
             const token = await loginRequest(loginBody)
-             localStorage.setItem("email", JSON.stringify(emailInput.value))
+             localStorage.setItem("email", JSON.stringify(emailInput.value))         
              return token
         }
     })
