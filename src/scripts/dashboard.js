@@ -150,11 +150,14 @@ export function handleUpdateModal(){
     let count = 0
     
     openButtons.forEach((button) => {
-        button.addEventListener('click', (event) => {
+        button.addEventListener('click', async(event) => {
             modalController.showModal()
 
-            inputs[0].value = titulo.innerHTML
-            inputs[1].value = descricao.innerHTML
+            const posts = await readAllPosts()
+            const filteredPost = posts.filter(post => post.id === event.target.dataset.postId)
+            inputs[0].value = filteredPost[0].title 
+            inputs[1].value = filteredPost[0].content 
+
         
             closeModal(closeButton, modalController)
             closeModal(cancelButton, modalController)

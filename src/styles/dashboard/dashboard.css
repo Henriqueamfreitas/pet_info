@@ -61,6 +61,10 @@ dialog{
     background-color: hsl(200, 100%, 99%);
 }
 
+dialog::backdrop{
+    background: rgba(30, 30, 30, 0.5);
+}
+
 .modal__newPost{}
 
 .newPost__form{
@@ -159,88 +163,302 @@ dialog{
     width: 272%;
     margin-left: -26.7188rem;
     padding-left: 26.7188rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    margin-bottom: 2.125rem;
 }
 
 .feed__posts{}
 
 .post{}
 
-.post__topPart{}
-
-.topPart__left{}
-
-.left__img{
-    width: 3.125rem;
-    height: 3.125rem;
+.post__topPart{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
 }
 
-.left__name{}
+.topPart__left{
+    display: flex;
+    align-items: center;
+}
 
-.left__data{}
+.left__img{
+    width: 2.5625rem;
+    height: 2.5625rem;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
 
-.topPart__right{}
+.left__name{
+    border-right: solid 2px hsl(210, 16%, 93%);
+    padding-right: 1rem;
+    margin-right: .5rem;
+    padding: .25rem 1rem .25rem 0;
+}
 
-.right__editButton{}
+.left__data{
+    padding: .25rem 0 .25rem 0;
+    color: hsl(210, 7%, 56%);
+}
 
-.right__excludeButton{}
+.topPart__right{
+    display: flex;
+    align-items: center;
+}
 
-.post__h1{}
+.right__editButton{
+    margin-right: .5rem;
+    padding: .25rem .5rem .25rem .5rem;
+    border-radius: .25rem;
+    border: solid .0625rem hsl(210, 17%, 95%);
+    background-color: transparent;
+    color: hsl(210, 11%, 15%);
+    cursor: pointer;
+}
 
-.post__p{}
+.right__editButton:hover{
+    background-color: hsl(210, 17%, 98%);   
+}
 
-.post__button{}
+.right__excludeButton{
+    padding: .25rem .5rem .25rem .5rem;
+    border-radius: .25rem;
+    border: none;
+    color: hsl(210, 7%, 56%);
+    cursor: pointer;
+}
+
+.right__excludeButton:hover{
+    background-color: hsl(210, 16%, 93%);
+    color: hsl(210, 9%, 31%);
+}
+
+.post__h1{
+    margin-bottom: 1.625rem;
+}
+
+.post__p{
+    margin-bottom: 1.25rem;
+}
+
+.post__button{
+    margin-bottom: 4rem;
+    color: hsl(230, 57%, 50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.post__button:hover{
+    border-bottom: solid 1px hsl(230, 57%, 50%);
+}
 
 .modal__controler--update{}
 
-.update__topPart{}
+.modal__container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.0625rem;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    margin-bottom: 2rem;
+}
 
-.updateTopPart__h1{}
+.update__topPart{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
 
-.updateTopPart__button{}
+.updateTopPart__h1{
+    padding: .25rem 0 .25rem 0;
+}
 
-.update__input{}
+.updateTopPart__button{
+    padding: .25rem .875rem .25rem .875rem;
+    background-color: hsl(210, 16%, 93%);
+    color: hsl(210, 7%, 56%);
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+}
 
-.update__cancelButton{}
+.update__label{
+    margin-bottom: .8125rem;
+}
 
-.update__saveButton{}
+.update__input{
+    margin-bottom: 1.625rem;
+    padding: .625rem 1.0625rem .625rem 1.0625rem;
+    background-color: hsl(210, 17%, 98%);
+    color: hsl(210, 11%, 15%);
+    border-radius: .25rem;
+    border: .0625rem solid hsl(210, 16%, 93%);
+}
+
+.update__input::placeholder{
+    color: hsl(210, 11%, 15%);
+}
+
+.update__buttons{
+    display: flex;
+    justify-content: end;
+}
+
+.update__cancelButton{
+    margin-right: 1rem;
+    padding: .4375rem 1.25rem .4375rem 1.25rem;
+    border-radius: .25rem;
+    background-color: hsl(210, 16%, 93%);
+    color: hsl(210, 7%, 56%);
+    border: none;
+    cursor: pointer;
+}
+
+.update__cancelButton:hover{
+    /* background-color: hsl(210, 11%, 71%); */
+    color: hsl(210, 9%, 31%);
+}
+
+.update__saveButton{
+    padding: .4375rem 1.25rem .4375rem 1.25rem;
+    border-radius: .25rem;
+    border: none;
+    cursor: pointer;
+    background-color: hsl(230, 57%, 50%);
+    color: hsl(200, 100%, 99%);
+}
+
+.update__saveButton:hover{
+    background-color: hsl(230, 68%, 54%);
+}
 
 .modal__controler--openPublication{}
 
-.openPublication__topPart{}
-
-.openPublicationTopPart__left{}
-
-.openPublicationTopLeft__img{
-    width: 3.125rem;
-    height: 3.125rem;
+.openPublication__topPart{
+    margin-top: 2.0625rem;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3rem;
 }
 
-.openPublicationTopLeft__name{}
+.openPublicationTopPart__left{
+    display: flex;
+    align-items: center;
+}
 
-.openPublicationTopLeft__date{}
+.openPublicationTopLeft__img{
+    width: 2.5625rem;
+    height: 2.5625rem;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
 
-.openPublicationTopPart__button{}
+.openPublicationTopLeft__name{
+    border-right: solid 2px hsl(210, 16%, 93%);
+    padding-right: 1rem;
+    margin-right: .5rem;
+    padding: .25rem 1rem .25rem 0;
+}
 
-.openPublication__h1{}
+.openPublicationTopLeft__date{
+    padding: .25rem 0 .25rem 0;
+    color: hsl(210, 7%, 56%);
+}
 
-.openPublication__p{}
+.openPublicationTopPart__button{
+    padding: .25rem .875rem .25rem .875rem;
+    color: hsl(210, 7%, 56%);
+    background-color: hsl(210, 16%, 93%);
+    border-radius: .25rem;
+    border: none;
+    cursor: pointer;
+}
+
+.openPublication__h1{
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.openPublication__p{
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.875rem;
+    color: hsl(210, 9%, 31%);
+}
 
 .modal__deletePost{}
 
-.deletePost__topPart{}
+.deletePost__topPart{
+    margin-top: 2.0625rem;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    margin-bottom: 2.875rem;
+    display: flex;
+    justify-content: space-between;
+}
 
 .deleteTopPart__h1{}
 
-.deleteTopPart__button{}
+.deleteTopPart__button{
+    padding: .25rem .875rem .25rem .875rem;
+    background-color: hsl(210, 16%, 93%);
+    color: hsl(210, 7%, 56%);
+    border-radius: .25rem;
+    border: none;
+    cursor: pointer;
+}
 
-.deletePost__h2{}
+.deletePost__h2{
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    margin-bottom: 1rem;
+}
 
-.deletePost__p{}
+.deletePost__p{
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    margin-bottom: 2.875rem;
+}
 
-.deletePost__buttons{}
+.deletePost__buttons{
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;  
+    margin-bottom: 2rem;
+}
 
-.deleteButtons__cancel{}
+.deleteButtons__cancel{
+    padding: .5rem 1rem .5rem 1rem;
+    border-radius: .25rem;
+    border: none;
+    background-color: hsl(210, 16%, 93%);
+    color: hsl(210, 7%, 56%);
+    margin-right: 1rem;
+    cursor: pointer;
+}
 
-.deleteButtons__exclude{}
+.deleteButtons__cancel:hover{
+    color: hsl(210, 9%, 31%);
+}
+
+.deleteButtons__exclude{
+    padding: .5rem 1rem .5rem 1rem;
+    border-radius: .25rem;
+    border: none;
+    background-color: hsl(349, 57%, 50%);
+    color: hsl(200, 100%, 99%);
+    cursor: pointer;
+}
+
+.deleteButtons__exclude:hover{
+    background-color: hsl(349, 69%, 55%);
+}

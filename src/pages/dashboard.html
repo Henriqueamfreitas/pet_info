@@ -52,16 +52,20 @@
         </div>       
         
         <dialog class="modal__controler--update">
-            <div class="update__topPart">
-                <h1 class="updateTopPart__h1">Edição</h1>
-                <button class="updateTopPart__button text-8">X</button>
+            <div class="modal__container">
+                <div class="update__topPart">
+                    <h1 class="text-5 updateTopPart__h1">Edição</h1>
+                    <button class="updateTopPart__button text-8">X</button>
+                </div>
+                <label class="update__label text-6" for="title">Título do post</label>
+                <input class="update__input text-7" type="text" name="title" id="title">
+                <label class="update__label text-6" for="content">Conteúdo do post</label>
+                <input class="update__input text-7" type="text" name="content" id="content">
+                <div class="update__buttons">
+                    <button class="update__cancelButton text-6">Cancelar</button>
+                    <button class="update__saveButton text-6">Salvar Alterações</button>
+                </div>
             </div>
-            <label class="text-6" for="title">Título do post</label>
-            <input class="update__input text-7" type="text" name="title" id="title">
-            <label class="text-6" for="content">Conteúdo do post</label>
-            <input class="update__input text-7" type="text" name="content" id="content">
-            <button class="update__cancelButton text-6">Cancelar</button>
-            <button class="update__saveButton text-6">Salvar Alterações</button>
         </dialog>
 
         <dialog class="modal__controler--openPublication">
