@@ -4,8 +4,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-left: 36.4%;
-    margin-right: 29.1%; */
 }
 
 /* HEADER */
@@ -65,7 +63,7 @@ dialog::backdrop{
     background: rgba(30, 30, 30, 0.5);
 }
 
-.modal__newPost{}
+/* .modal__newPost{} */
 
 .newPost__form{
     margin-top: 2.0625rem;
@@ -115,7 +113,7 @@ dialog::backdrop{
     color: hsl(210, 7%, 56%);
 }
 
-#conteudo::placeholder{}
+/* #conteudo::placeholder{} */
 
 .newPost__bottomPart{
     margin-top: 1.25rem;
@@ -143,11 +141,11 @@ dialog::backdrop{
     cursor: pointer;
 }
 
-.modal__logout{}
+/* .modal__logout{} */
 
-.logout__user{}
+/* .logout__user{} */
 
-.logout__button{}
+/* .logout__button{} */
 
 .logout__image{
     width: 3.125rem;
@@ -170,9 +168,9 @@ dialog::backdrop{
     margin-bottom: 2.125rem;
 }
 
-.feed__posts{}
+/* .feed__posts{} */
 
-.post{}
+/* .post{} */
 
 .post__topPart{
     display: flex;
@@ -256,7 +254,7 @@ dialog::backdrop{
     border-bottom: solid 1px hsl(230, 57%, 50%);
 }
 
-.modal__controler--update{}
+/* .modal__controler--update{} */
 
 .modal__container{
     display: flex;
@@ -336,7 +334,7 @@ dialog::backdrop{
     background-color: hsl(230, 68%, 54%);
 }
 
-.modal__controler--openPublication{}
+/* .modal__controler--openPublication{} */
 
 .openPublication__topPart{
     margin-top: 2.0625rem;
@@ -398,7 +396,7 @@ dialog::backdrop{
     color: hsl(210, 9%, 31%);
 }
 
-.modal__deletePost{}
+/* .modal__deletePost{} */
 
 .deletePost__topPart{
     margin-top: 2.0625rem;
@@ -409,7 +407,7 @@ dialog::backdrop{
     justify-content: space-between;
 }
 
-.deleteTopPart__h1{}
+/* .deleteTopPart__h1{} */
 
 .deleteTopPart__button{
     padding: .25rem .875rem .25rem .875rem;

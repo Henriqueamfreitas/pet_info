@@ -24,7 +24,7 @@ export async function createUser(userBody){
     })
     .then( async (res) => {
         if(res.ok){
-            alert('Usuário cadastrado com sucesso')
+            console.log('Usuário cadastrado com sucesso')
             return res.json()
         } else{
             const response = await res.json()
@@ -42,14 +42,24 @@ async function handleCreateUser(){
     let user = {}
     registerButton.addEventListener('click', async(event) => {
         event.preventDefault()
+        // console.log(inputs)
         inputs.forEach(( {name, value} ) => {
             user[name] = value
         })
+        // console.log(user)
+        const userCorrectFormat = {}
+        userCorrectFormat.username = user.username
+        userCorrectFormat.email = user.email
+        userCorrectFormat.password = user.password
+        userCorrectFormat.avatar = user.avatar
+        // console.log(userCorrectFormat)
 
-        // await createUser(user)
+        await createUser(userCorrectFormat)
         location.replace('../../index.html')
     })
 } 
+
+
 
 
 const goBackButton = document.querySelector('.leftSideTop__button')
