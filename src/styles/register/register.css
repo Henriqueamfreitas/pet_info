@@ -2,8 +2,8 @@
 body{
     display: flex;
     justify-content: center;
-    /* margin-top: 11.6875rem; */
-    /* margin-bottom: 11.6875rem; */
+    align-items: center;
+    height: 100vh;
 }
 
 /* LEFT SIDE */
@@ -18,6 +18,7 @@ body{
     padding-bottom: 2.75rem;
     border: 1px solid hsl(210, 16%, 93%);
     border-radius: 4px;
+    /* margin-top: 1%; */
 }
 
 .leftSide__top{
@@ -28,12 +29,19 @@ body{
 
 .leftSideTop__h2{
     padding: .5rem;
+    padding-left: 0rem;
 }
 
 .leftSideTop__button{
     padding: .5rem;
     border-radius: 4px;
-    border: none;
+    border: solid 1px hsl(210, 16%, 93%);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.leftSideTop__button:hover{
+    background-color: hsl(210, 17%, 98%);
 }
 
 .leftSide__label{
@@ -45,6 +53,13 @@ body{
     padding-bottom: .625rem;
     padding-left: 1rem;
     margin-bottom: 1.625rem;
+    background-color: hsl(210, 16%, 93%);
+    border: 1px solid hsl(210, 7%, 56%);
+    border-radius: .25rem;
+}
+
+.leftSide__input::placeholder{
+    color: hsl(210, 7%, 56%);
 }
 
 .leftSide__loginButton{
@@ -54,6 +69,12 @@ body{
     background-color: #364FC7;
     border: none;
     border-radius: 4px;
+    color: hsl(200, 100%, 99%);
+    cursor: pointer;    
+}
+
+.leftSide__loginButton:hover{
+    background-color: hsl(230, 68%, 54%);
 }
 
 .leftSide__registerButton{
@@ -61,32 +82,54 @@ body{
     padding-bottom: .4375rem;
     border: none;
     border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px hsl(210, 16%, 93%);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.leftSide__registerButton:hover{
+    background-color: hsl(210, 17%, 98%);
 }
 
 /* RIGHT SIDE */
 .rightSide{
     display: flex;
     flex-direction: column;
-    width: 23.0625rem;
+    width: 20rem;
 }
 
-.rightSide__h1{}
+.rightSide__h1{
+    margin-bottom: 1.5rem;
+}
 
-.rightSide__h2{}
+.rightSide__h2{
+    margin-bottom: 1.5rem;
+}
 
-.rightSide__p{}
+.rightSide__p{
+    margin-bottom: 1.5rem;
+}
 
 .rightSide__images{
     display: flex;
 }
 
-.images__left{}
+.images__left{
+    /* margin-right: 1.125rem; */
+}
 
-.imagesLeft__top{}
+.imagesLeft__top{
+    margin-bottom: 1.125rem;
+}
 
-.imagesLeftTop__first{}
+.imagesLeftTop__first{
+    margin-right: 1.125rem;
+}
 
-.imagesLeftTop__second{}
+.imagesLeftTop__second{
+    margin-right: 1.125rem;
+}
 
 .imagesLeft__bottom{}
 
