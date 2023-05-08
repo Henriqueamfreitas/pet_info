@@ -31,14 +31,16 @@ function handleNewPost(){
                 count+=1
             }
             newPost[name] = value
+            // console.log(name)
+            // console.log(value)
         })
-        
+        // console.log(newPost)
         if(count !== 0){
             count = 0
             alert('Por favor, preencha os campos necessários.')
             // toast(red, 'Por favor, preencha os campos necessários.')
         } else{
-            // await createPost(newPost) createPost ta dando error 500
+            await createPost(newPost) // createPost ta dando error 500
             modalController.close()
 
             showDash()
