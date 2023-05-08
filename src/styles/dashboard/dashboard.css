@@ -141,11 +141,42 @@ dialog::backdrop{
     cursor: pointer;
 }
 
-/* .modal__logout{} */
+.modal__logout{
+    position: relative;
+    top: 7.4375rem;
+    left: 718px;
+    width: 205px;
+    height: 135px;
+    border: none;
 
-/* .logout__user{} */
+}
 
-/* .logout__button{} */
+.logout__user{
+    padding-left: 1rem;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    border: none;
+
+}
+
+.logout__button{
+    color: hsl(210, 9%, 31%);
+    padding-left: 1rem;
+    background-color: transparent;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.logout__button:hover{
+    background-color: hsl(210, 11%, 71%);
+    color: hsl(210, 11%, 15%);
+    border: none;
+}
 
 .logout__image{
     width: 3.125rem;
