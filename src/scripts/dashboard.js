@@ -206,11 +206,8 @@ export async function handlePublicationModal(){
     const name = document.querySelector('.openPublicationTopLeft__name')
     const date = document.querySelector('.openPublicationTopLeft__date')
 
-    const user = await readUser()
-    console.log(user)
-    img.src = user.avatar
-    name.innerHTML = user.username 
-
+    // const user = await readUser()
+    
     openButtons.forEach((button) => {
         button.addEventListener('click', async(event) => {
             modalControler.showModal()
@@ -218,6 +215,9 @@ export async function handlePublicationModal(){
             const filteredPost = posts.filter(post => post.id === event.target.dataset.postId)
             modalH1.innerHTML = filteredPost[0].title 
             modalP.innerHTML = filteredPost[0].content 
+            const user = filteredPost[0].user
+            name.innerHTML = user.username 
+            img.src = user.avatar
             const dateUnadjusted = filteredPost[0].createdAt.substr(0,7)
             const year = dateUnadjusted.substr(0,4)
             const monthNumber = parseInt(dateUnadjusted.substr(5,6))
